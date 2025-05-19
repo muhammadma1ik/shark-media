@@ -1,0 +1,239 @@
+/* Navigation Styles */
+.floating-nav {
+  position: fixed;
+  top: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+}
+
+.logo-image {
+  height: 80px;
+  max-width: 270px;
+  width: 270px;
+  object-fit: contain;
+  filter: brightness(1.2) contrast(1.1);
+  transition: transform var(--transition-medium) ease;
+  margin-left: 8px;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast) ease;
+  font-size: 1.1rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text-primary);
+}
+
+.nav-link.contact-btn {
+  background: var(--color-white);
+  color: #1a1a1a;
+  border-radius: 40px;
+  padding: 10px 28px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link.contact-btn:hover, .nav-link.contact-btn:focus {
+  background: var(--color-violet);
+  color: var(--color-white);
+  box-shadow: 0 0 16px 4px rgba(113, 88, 239, 0.5), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.services-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.2s;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+.dropdown:hover > .nav-link .services-arrow {
+  transform: rotate(180deg);
+}
+
+/* Enhanced Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + var(--spacing-sm));
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: var(--spacing-sm);
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(18, 18, 18, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 8px;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(135deg, rgba(0, 194, 209, 0.1), rgba(113, 88, 239, 0.1));
+  color: var(--color-text-primary);
+  transform: translateX(var(--spacing-xs));
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 5%;
+    right: 5%;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-md);
+    border-radius: 16px;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: var(--spacing-sm);
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    transform: none;
+  }
+
+  .nav-link.contact-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 40px;
+    max-width: 140px;
+    width: 120px;
+  }
+}

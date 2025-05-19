@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Shark Media</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/contact.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="floating-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="images/shark-media-logo.png" alt="Shark Media" class="logo-image" />
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span>☰</span>
+      </button>
+      <ul class="nav-links" role="menubar">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" role="menuitem">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link" role="menuitem">About</a>
+        </li>
+        <li class="nav-item dropdown" role="menuitem" aria-haspopup="true">
+          <a href="#" class="nav-link">Services <span class="services-arrow">▼</span></a>
+          <ul class="dropdown-menu" role="menu" aria-label="Services submenu">
+            <li>
+              <a href="services/google-ads.html" class="dropdown-item" role="menuitem">Google Ads Campaigns</a>
+            </li>
+            <li>
+              <a href="services/meta-ads.html" class="dropdown-item" role="menuitem">Meta Advertising</a>
+            </li>
+            <li>
+              <a href="services/social-media.html" class="dropdown-item" role="menuitem">Social Media Marketing</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link contact-btn active" role="menuitem">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="contact-page">
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <h1>Get in Touch</h1>
+      <p>Ready to transform your digital presence? Let's start the conversation.</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-content">
+          <h2>Let's Grow Together</h2>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+          
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" />
+            </div>
+            <div class="form-group">
+              <select id="service" name="service" required>
+                <option value="">Select a Service</option>
+                <option value="google-ads">Google Ads Campaigns</option>
+                <option value="meta-ads">Meta Advertising</option>
+                <option value="social-media">Social Media Marketing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Tell us about your project" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="images/shark-media-logo.png" alt="Shark Media" />
+        <p>Transforming businesses through data-driven digital marketing solutions that deliver exceptional ROI.</p>
+        <div class="social-links">
+          <a href="https://twitter.com/sharkmedia" class="social-link" aria-label="Twitter">
+            <img src="https://api.iconify.design/mdi:twitter.svg" alt="Twitter" width="24" height="24" />
+          </a>
+          <a href="https://linkedin.com/company/sharkmedia" class="social-link" aria-label="LinkedIn">
+            <img src="https://api.iconify.design/mdi:linkedin.svg" alt="LinkedIn" width="24" height="24" />
+          </a>
+          <a href="https://instagram.com/sharkmedia" class="social-link" aria-label="Instagram">
+            <img src="https://api.iconify.design/mdi:instagram.svg" alt="Instagram" width="24" height="24" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Services navigation">
+        <h3>Services</h3>
+        <ul class="footer-links">
+          <li><a href="services/google-ads.html">Google Ads</a></li>
+          <li><a href="services/meta-ads.html">Meta Advertising</a></li>
+          <li><a href="services/social-media.html">Social Media Marketing</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li>
+            <img src="https://api.iconify.design/mdi:email.svg" alt="" width="20" height="20" />
+            hello@sharkmedia.com
+          </li>
+          <li>
+            <img src="https://api.iconify.design/mdi:phone.svg" alt="" width="20" height="20" />
+            (555) 123-4567
+          </li>
+          <li>
+            <img src="https://api.iconify.design/mdi:map-marker.svg" alt="" width="20" height="20" />
+            123 Digital Lane<br>Tech City, TC 12345
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>&copy; 2025 Shark Media. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,177 @@
+/* ==================== HERO BASE STYLES ==================== */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:var(--spacing-xl) var(--spacing-md);
+  position:relative;
+  overflow:hidden;
+}
+
+.background-grid{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.15;
+  z-index:0;
+}
+
+/* Radial grain + colour tint */
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg,rgba(0,194,209,.1) 0%,rgba(113,88,239,.1) 50%,rgba(244,91,255,.1) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.5' numOctaves='2' seed='1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='.2'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 30% 70%,rgba(0,194,209,.05) 0%,transparent 70%),
+    radial-gradient(circle at 70% 30%,rgba(244,91,255,.05) 0%,transparent 70%);
+  background-color:var(--color-dark);
+  filter:blur(2px);
+  z-index:-1;
+}
+
+.hero-content{
+  max-width:1200px;
+  text-align:center;
+  z-index:1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  margin-top: 6vh;
+}
+
+/* ---------- Headline animation (unchanged) ---------- */
+.main-heading{
+  margin-bottom:var(--spacing-lg);
+  line-height:1.1;
+  letter-spacing:-.04em;
+  text-shadow:0 2px 8px rgba(0,0,0,.3);
+  font-size:calc(var(--font-size-6xl)*1.2);
+  opacity:0;
+  transform:translateX(50px);
+  filter:blur(10px);
+  animation:headingReveal 1s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes headingReveal{
+  0%{opacity:0;transform:translateX(50px);filter:blur(10px);}
+  60%{opacity:.8;transform:translateX(0);filter:blur(5px);}
+  100%{opacity:1;transform:translateX(0);filter:blur(0);}
+}
+
+.text-animation{
+  display:block;
+  margin-top:var(--spacing-md);
+  height:1.2em;
+  position:relative;
+}
+.text-item{
+  position:absolute;top:0;left:0;width:100%;
+  opacity:0;transform:translateY(20px);
+  font-size:.9em;
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+  background-image:linear-gradient(90deg,var(--color-aqua),var(--color-violet),var(--color-pink));
+  background-size:200% 100%;
+  text-shadow:0 0 20px rgba(0,194,209,.5);
+}
+.text-item.active{
+  opacity:1;transform:translateY(0);
+  animation:textSlideIn 1s ease-out forwards,
+           gradientAnimation 3s infinite;
+}
+
+@keyframes textSlideIn{0%{transform:translateY(20px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
+@keyframes gradientAnimation{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Subheading & CTA (unchanged) */
+.subheading{
+  font-size:1.35em;
+  margin-bottom:var(--spacing-xl);
+  color:var(--color-text-secondary);
+  max-width:800px;margin:0 auto var(--spacing-xl);
+  letter-spacing:-.02em;text-shadow:0 0 15px rgba(255,255,255,.2);
+}
+.subheading strong{
+  color:var(--color-aqua);text-shadow:0 0 10px rgba(0,194,209,.5);
+}
+
+.cta-button{
+  display:inline-flex;align-items:center;justify-content:center;
+  background-color:var(--color-aqua);color:var(--color-black);
+  font-weight:var(--font-weight-medium);font-size:var(--font-size-lg);
+  padding:var(--spacing-sm) var(--spacing-xl);border-radius:100px;
+  transition:all var(--transition-medium) ease;position:relative;overflow:hidden;
+  width:200px;margin-bottom:var(--spacing-md);
+}
+.button-text{position:relative;z-index:2;transition:transform var(--transition-medium) ease,opacity var(--transition-medium) ease;width:100%;text-align:center;}
+.button-icon{position:absolute;left:50%;transform:translateX(-50%);opacity:0;transition:opacity var(--transition-medium) ease;}
+.cta-button:hover{background-color:var(--color-aqua-dark);}
+.cta-button:hover .button-text{opacity:0;}
+.cta-button:hover .button-icon{opacity:1;}
+
+/* ---------- Scroll indicator ---------- */
+.scroll-indicator{margin-top:var(--spacing-xs);margin-bottom:var(--spacing-md);}
+.mouse{width:26px;height:40px;border:2px solid var(--color-text-secondary);border-radius:20px;position:relative;margin:0 auto;}
+.wheel{width:4px;height:8px;background-color:var(--color-text-secondary);border-radius:2px;position:absolute;top:6px;left:50%;transform:translateX(-50%);animation:scroll 1.5s infinite;}
+@keyframes scroll{0%{transform:translate(-50%,0);opacity:1;}100%{transform:translate(-50%,15px);opacity:0;}}
+
+/* Responsive font sizing */
+@media(max-width:768px){
+  .main-heading{font-size:var(--font-size-4xl);}
+  .subheading{font-size:var(--font-size-lg);}
+}
+@media(max-width:480px){
+  .main-heading{font-size:var(--font-size-3xl);}
+  .subheading{font-size:var(--font-size-base);}
+  .cta-button{font-size:var(--font-size-base);padding:var(--spacing-xs) var(--spacing-md);}
+}
+
+/* ========================================================= */
+/* ========== NEW ANIMATED RIPPLING GRADIENT GRID =========== */
+/* ========================================================= */
+
+.grid-overlay{
+  position:absolute;
+  inset:0;
+  z-index:0;               /* under text, above video */
+  pointer-events:none;
+
+  /* initial grid colour */
+  --grid-col: rgba(0,194,209,.18);
+
+  background-image:
+    repeating-linear-gradient(0deg ,var(--grid-col) 0 2px,transparent 2px 60px),
+    repeating-linear-gradient(90deg,var(--grid-col) 0 2px,transparent 2px 60px);
+
+  /* fade out toward centre so text remains clear */
+  mask-image: radial-gradient(circle at center,
+              transparent 0%,transparent 45%,black 80%);
+  -webkit-mask-image: radial-gradient(circle at center,
+              transparent 0%,transparent 45%,black 80%);
+
+  animation:
+    gridMove 40s linear infinite,
+    gridHue 15s linear infinite;
+}
+
+/* subtle diagonal drift */
+@keyframes gridMove{
+  0%   {background-position:0 0,0 0;}
+  50%  {background-position:60px 30px,30px 60px;}
+  100% {background-position:0 0,0 0;}
+}
+
+/* hue shift aqua → violet → back */
+@keyframes gridHue{
+  0%,100%{--grid-col: rgba(0,194,209,.18);}
+  50%    {--grid-col: rgba(244,91,255,.18);}
+}

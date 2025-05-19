@@ -1,0 +1,123 @@
+/* ================= THREE-PILLAR SERVICES SECTION ================= */
+.services-section {
+  position: relative;
+  padding: var(--spacing-xxl) var(--spacing-md);
+  background-color: var(--color-dark);
+  overflow: hidden;
+}
+
+/* subtle vertical moving stripes (similar vibe to hero grid) */
+.services-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04) 0,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px,
+    transparent 30px
+  );
+  animation: stripes 20s linear infinite;
+  pointer-events: none;
+}
+@keyframes stripes {
+  from { transform: translateY(0); }
+  to   { transform: translateY(30px); }
+}
+
+/* Intro heading */
+.services-heading {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+  max-width: 900px;
+  margin: 0 auto var(--spacing-xxl);
+}
+.gradient-em {
+  background: linear-gradient(90deg, var(--color-aqua), var(--color-violet), var(--color-pink));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-xxl);
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Individual item */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: var(--spacing-lg) var(--spacing-md);
+  position: relative;
+}
+.service-item:not(:first-child)::before {          /* vertical dividers */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Icon */
+.service-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-aqua);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Text */
+.service-title {
+  margin-bottom: var(--spacing-sm);
+  margin-top: 0;
+  text-align: left;
+  width: 100%;
+}
+.service-desc {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  color: var(--color-text-secondary);
+  max-width: 340px;
+  line-height: 1.45;
+  font-size: var(--font-size-base);
+}
+
+/* Fade-in animation on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .service-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .service-item.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* --- Fallback: always show service cards --- */
+.service-item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.service-image {
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}

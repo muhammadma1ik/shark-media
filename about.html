@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About & Contact - Shark Media</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/about.css" />
+  <link rel="stylesheet" href="styles/contact.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="floating-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="images/shark-media-logo.png" alt="Shark Media" class="logo-image" />
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span>☰</span>
+      </button>
+      <ul class="nav-links" role="menubar">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" role="menuitem">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link active" role="menuitem">About</a>
+        </li>
+        <li class="nav-item dropdown" role="menuitem" aria-haspopup="true">
+          <a href="#" class="nav-link">Services <span class="services-arrow">▼</span></a>
+          <ul class="dropdown-menu" role="menu" aria-label="Services submenu">
+            <li>
+              <a href="services/google-ads.html" class="dropdown-item" role="menuitem">Google Ads Campaigns</a>
+            </li>
+            <li>
+              <a href="services/meta-ads.html" class="dropdown-item" role="menuitem">Meta Advertising</a>
+            </li>
+            <li>
+              <a href="services/social-media.html" class="dropdown-item" role="menuitem">Social Media Marketing</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link contact-btn" role="menuitem">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="about-page">
+    <!-- Hero Section -->
+    <section class="about-hero-glow">
+      <div class="about-hero-content">
+        <span class="about-label">About Us</span>
+        <h1 class="about-main-headline">Built On Integrity, Driven By Results</h1>
+        <p class="about-subheadline">For over years, we've been empowering businesses with expert, data-driven marketing—delivered by a team that cares about your success.</p>
+        <a href="contact.html" class="about-cta-button">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Agency Statement Section -->
+    <section class="agency-intro-section">
+      <div class="agency-intro-container">
+        <div class="agency-intro-left">
+          <h2 class="agency-bold">SOCIAL-FIRST<br>CREATIVE & MEDIA AGENCY</h2>
+          <div class="agency-icons">
+            <div class="agency-icon-block">
+              <img src="https://api.iconify.design/mdi:lightbulb-on-outline.svg" alt="Content" class="agency-icon" />
+              <span>Creative Content & Experiences</span>
+            </div>
+            <div class="agency-icon-block">
+              <img src="https://api.iconify.design/mdi:target.svg" alt="Performance" class="agency-icon" />
+              <span>Performance-Driven Media</span>
+            </div>
+            <div class="agency-icon-block">
+              <img src="https://api.iconify.design/mdi:chart-timeline-variant.svg" alt="Data" class="agency-icon" />
+              <span>Social Tech & Data Science</span>
+            </div>
+          </div>
+        </div>
+        <div class="agency-intro-right">
+          <p>Founded in 2020, Shark Media is built on a passion for helping brands win in today's always-on, digital-first world. Our team blends creative storytelling, data-driven strategy, and the latest technology to deliver measurable results for our clients. We believe in transparency, innovation, and a relentless focus on your business goals.</p>
+          <p class="agency-award">Recognized as a top independent agency, we're proud to help brands grow, connect, and lead in their industries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission, Values, Team, Contact (reuse previous sections, but with improved spacing and blending) -->
+    <section id="mission" class="mission-section">
+      <div class="container">
+        <div class="mission-content">
+          <h2>Our Mission</h2>
+          <p>To empower brands with data-driven marketing solutions that deliver exceptional ROI and sustainable growth. We combine creative storytelling with analytical precision to help our clients dominate their markets and build lasting customer relationships.</p>
+        </div>
+        <div class="mission-image">
+          <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" alt="Team collaboration" />
+        </div>
+      </div>
+    </section>
+
+    <section id="values" class="values-section">
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3>Integrity</h3>
+            <p>We believe in honest, transparent communication and always act in the best interests of our clients and team.</p>
+          </div>
+          <div class="value-card">
+            <h3>Innovation</h3>
+            <p>We embrace change, experiment boldly, and never stop learning. Our solutions are as creative as they are effective.</p>
+          </div>
+          <div class="value-card">
+            <h3>Collaboration</h3>
+            <p>We work as one team—internally and with our clients—because the best results come from shared ideas and open minds.</p>
+          </div>
+          <div class="value-card">
+            <h3>Results-Driven</h3>
+            <p>We set ambitious goals, measure everything, and celebrate our clients' wins as our own.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-content">
+          <h2>Let's Grow Together</h2>
+          <p>Ready to take your brand to the next level? Contact us for a free strategy session and discover how Shark Media can help you achieve your goals.</p>
+          <a href="contact.html" class="cta-button">
+            <span>Get Started Now</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Services</h3>
+        <ul class="footer-links">
+          <li><a href="services/google-ads.html">Google Ads</a></li>
+          <li><a href="services/meta-ads.html">Meta Advertising</a></li>
+          <li><a href="services/social-media.html">Social Media Marketing</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li>Email: hello@sharkmedia.com</li>
+          <li>Phone: (555) 123-4567</li>
+          <li>Address: 123 Digital Lane<br>Tech City, TC 12345</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Shark Media. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
